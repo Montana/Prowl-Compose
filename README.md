@@ -97,7 +97,8 @@ services:
     
 From your project directory, start your app
 
-<pre>docker-compose up
+<pre>
+ docker-compose up
  Pulling image redis...
  Building web...
  Starting composetest_redis_1...
