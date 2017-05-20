@@ -64,7 +64,7 @@ Above, Redis is the hostname of the redis container on the application’s netwo
 <pre>flask
 redis</pre>
 
-![documentations](http://getprowl.com/assets/images/wewe.png)
+<center>![documentations](http://getprowl.com/assets/images/wewe.png)</center>
 
 <h1 align="center">Creating a Dockerfile</h1>
 
