@@ -14,6 +14,10 @@ Restart the Docker daemon
 
 <pre>sudo service docker restart</pre>
 
+Make sure you've made applied excutable permissions in the binary: 
+
+<pre>sudo chmod +x /usr/local/bin/docker-compose</pre>
+
 Verify that Docker can resolve external IP addresses by trying to pull an image
 
 <pre>docker pull hello-world</pre>
@@ -102,5 +106,9 @@ From your project directory, start your app
  web_1   |  * Running on http://0.0.0.0:5000/
  web_1   |  * Restarting with stat</pre>
  
+Now you can use Docker Compose with Prowl, if you need to uninstall Docker Compose on your VPS, run 
+
+<pre>sudo rm /usr/local/bin/docker-compose</pre> 
+
  
 
