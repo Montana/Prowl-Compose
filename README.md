@@ -40,7 +40,7 @@ Then update GRUB
 
 Now let's create a test directory for a test project 
 
-<pre> mkdir composetest
+<pre>mkdir composetest
 cd composetest</pre>
 
 Create a file called app.py in your project directory and paste this in
@@ -60,3 +60,43 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)</pre>
 
 Above, Redis is the hostname of the redis container on the application’s network. We use the default port for Redis, 6379. Create another file called requirements.txt in your project directory and paste this in
+
+<pre>flask
+redis</pre>
+
+<h1 align="center">Creating a Dockerfile</h1>
+
+You can make a file called "Dockerfile" and make the following contents:
+
+<pre>FROM python:3.4-alpine
+ADD . /code
+WORKDIR /code
+RUN pip install -r requirements.txt
+CMD ["python", "app.py"]</pre>
+
+We are going to define services in the Docker Compose file. So create a YAML file called docker-compose.yml, in your project directory and paste the following
+
+<pre>version: '2'
+services:
+  web:
+    build: .
+    ports:
+     - "5000:5000"
+    volumes:
+     - .:/code
+  redis:
+    image: "redis:alpine"</pre>
+    
+From your project directory, start your app
+
+<pre>docker-compose up
+ Pulling image redis...
+ Building web...
+ Starting composetest_redis_1...
+ Starting composetest_web_1...
+ redis_1 | [8] 02 Jan 18:43:35.576 # Server started, Redis version 2.8.3
+ web_1   |  * Running on http://0.0.0.0:5000/
+ web_1   |  * Restarting with stat</pre>
+ 
+ 
+
