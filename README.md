@@ -14,7 +14,7 @@ Restart the Docker daemon
 
 <pre>sudo service docker restart</pre>
 
-Verify that Docker can resolve external IP addresses by trying to pull an image: 
+Verify that Docker can resolve external IP addresses by trying to pull an image
 
 <pre>docker pull hello-world</pre>
 
