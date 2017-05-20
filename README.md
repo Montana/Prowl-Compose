@@ -106,6 +106,26 @@ From your project directory, start your app
  web_1   |  * Running on http://0.0.0.0:5000/
  web_1   |  * Restarting with stat</pre>
  
+If you need to detach a service, you can run 
+
+<pre>docker-compose up</pre>
+
+Make sure the container and services you want are running using the "ps" flag 
+
+<pre>docker-compose ps</pre>
+
+You should now be able to see what's running
+
+<pre>docker-compose up -d
+Starting composetest_redis_1...
+Starting composetest_web_1...
+
+docker-compose ps
+Name                 Command            State       Ports
+-------------------------------------------------------------------
+prowl-composetest_redis_1   /usr/local/bin/run         Up
+prowl-composetest_web_1     /bin/sh -c python app.py   Up      5000->5000/tcp<pre>
+ 
 Now you can use Docker Compose with Prowl, if you need to uninstall Docker Compose on your VPS, run 
 
 <pre>sudo rm /usr/local/bin/docker-compose</pre> 
