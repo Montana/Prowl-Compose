@@ -124,9 +124,9 @@ docker-compose ps
 Name                 Command            State       Ports
 -------------------------------------------------------------------
 prowl-composetest_redis_1   /usr/local/bin/run         Up
-prowl-composetest_web_1     /bin/sh -c python app.py   Up      5000->5000/tcp<pre>
+prowl-composetest_web_1     /bin/sh -c python app.py   Up      5000->5000/tcp</pre>
  
-Now you can use Docker Compose with Prowl, if you need to uninstall Docker Compose on your VPS, run 
+In conclusion, you can now use Docker Compose with Prowl, if you need to uninstall Docker Compose on your VPS, run 
 
 <pre>sudo rm /usr/local/bin/docker-compose</pre> 
 
